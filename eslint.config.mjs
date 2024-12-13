@@ -16,6 +16,7 @@ const eslintConfig = [
       '@typescript-eslint/ban-ts-comment': 'warn',
       '@typescript-eslint/no-empty-object-type': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
+      "import/no-anonymous-default-export": "off",
       '@typescript-eslint/no-unused-vars': [
         'warn',
         {
