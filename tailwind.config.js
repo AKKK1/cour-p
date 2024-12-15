@@ -4,7 +4,7 @@ export default {
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './src/**/*.{html,js,ts,tsx}',
   ],
   darkMode: ['selector', '[data-theme="dark"]'],
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],

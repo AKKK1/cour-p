@@ -8,7 +8,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps): ReactElement {
   return (
     <html>
-      <body>{children}</body>
+      <body className="bg-black text-white">{children}</body>
     </html>
   )
 }

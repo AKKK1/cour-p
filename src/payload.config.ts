@@ -24,8 +24,6 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-
-
   email: brevoAdapter(),
   collections: [Users, Media, Customers],
   editor: lexicalEditor(),
@@ -39,24 +37,19 @@ export default buildConfig({
   sharp,
   plugins: [
     payloadCloudPlugin(),
-    // storage-adapter-placeholder
-
     s3Storage({
       collections: {
-        media: true,
-      
+        media: true
       },
       bucket: process.env.S3_BUCKET_NAME || "",
       config: {
-          region: process.env.S3_REGION || "",
-          endpoint: process.env.S3_ENDPOINT || "",
-          credentials: {
-            accessKeyId: process.env.S3_ACCESS_KEY || "",
-            secretAccessKey: process.env.S3_SECRET_KEY || "",
-          }
-
+        region: process.env.S3_REGION || "",
+        endpoint: process.env.S3_ENDPOINT || "",
+        credentials: {
+          accessKeyId: process.env.S3_ACCESS_KEY || "",
+          secretAccessKey: process.env.S3_SECRET_KEY || ""
+        }
       }
-
     })
   ],
 })
