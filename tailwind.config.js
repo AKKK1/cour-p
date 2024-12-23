@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     './pages/**/*.{ts,tsx}',
@@ -7,8 +8,29 @@ export default {
     './src/**/*.{html,js,ts,tsx}',
   ],
   darkMode: ['selector', '[data-theme="dark"]'],
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
-  prefix: '',
+  plugins: [
+    // plugin(({theme,addUtilities}) => {
+
+    //   const neonUtilities = {};
+    //   const colors = theme('colors');
+    //   for (const color in colors) {
+    //     if (typeof colors[color] ===  'object') {
+    //       const color1 = colors[color]['500'];
+    //       const color2 = colors[color]['700'];
+    //       neonUtilities[`.neon-${color}`] = {
+    //         boxShadow: `0 0 5px ${color1}, 0 0 20px ${color2}`,
+    //       }
+
+
+    //     }
+    //   }
+    //   addUtilities(neonUtilities);
+    // }),
+    
+   require('tailwindcss-animate'),
+   require('@tailwindcss/typography'),
+  ],
+  prefix: '', 
   safelist: [
     'lg:col-span-4',
     'lg:col-span-6',
@@ -43,6 +65,9 @@ export default {
       },
     },
     extend: {
+      boxShadow:{
+        neon: "0 0 5px theme('colors.purple.200'), 0 0 20px theme('colors.purple.700')"
+      },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
